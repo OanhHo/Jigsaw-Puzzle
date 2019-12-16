@@ -1,0 +1,20 @@
+Jigsaw Puzzle Game HTML5
+I.Introduction
+A game based on a jigsaw puzzle.
+Assemble the pieces that have come apart to complete a single design.
+Specifications such as time limits and hints can be included.
+Some effects are displayed when clearing or when the game is over (when a rule takes effect).
+Title screen and result screen are required.
+Sounds such as SE are also essential.
+II.Algorithms
+-Gamer have to create account to play this game.
+-Game has 5 levels.In each level, there are 5 pictures and gamer has to play all. After completing a level, gamer can play a harder level.
+-In each level,we have set countdown time with each picture. If it has timeout, gamer will have to start again. If gamer
+-When playing,if gamer play correctly, the pieces will fit together.
+-Points are calculated based on the time gamer completes the game. The shorter the time, the higher the score.
+-Gamer can use points in exchange for help.The number of turns varies depending on the difficulty of the level.
+III. Development environment 
+-Programming languages: HTML5, CSS, JavaScript, PHP
+-Database: Mysql
+-Programming tool: Sublime Text 3
+
