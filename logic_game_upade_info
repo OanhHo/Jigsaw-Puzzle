@@ -1,0 +1,26 @@
+Logic of game:
+
+-Crop :
++Deaflt size of image : 800x600 px
++Cut the image into squares
+-Size of rows x columns:
++Level 1: 3x4
++Level 2: 4x5
++Level 3: 5x6
++Level 2: 6x7
++Level 2: 7x8
+
+-Set time and Scores:
++Level 1: maxTime= 4 minutes, maxSores= 12 points
+	After 20 seconds, 1 point will be deducted.
++Level 2: maxTime= 8 minutes, maxSores= 24 points
+	After 20 seconds, 1 point will be deducted.
++Level 3: maxTime= 12 minutes, maxSores= 36 points
+	After 20 seconds, 1 point will be deducted.
++Level 4: maxTime= 16 minutes, maxSores= 48 points
+	After 20 seconds, 1 point will be deducted.
++Level 5: maxTime= 20 minutes, maxSores= 60 points
+	After 20 seconds, 1 point will be deducted.
+->If timeout, you will lose and have to play again.
+
+
