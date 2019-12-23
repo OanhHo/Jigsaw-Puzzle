@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style type="text/css">
+		div.container {
+    	width: 100%;
+		}
+	</style>
+	<title>Jigsaw Puzzle</title>
+	<script type="text/javascript" src="Js/showimage.js"></script>
+	<script type="text/javascript">
+		var game = null;
+        var imageID = "img1";
+        var totalRows = 3;
+        var totalColumns = 4;
+
+
+        function InitGame() {
+            LoadNewImage(imageID);
+        }
+        function LoadNewImage(imgID) {
+            imageID = imgID;
+            
+            SetRowsColumn();
+            
+            LoadGame();
+        }
+        function LoadGame() {
+            var canvasID = "canJigsaw";
+
+            game = new jigsaw(canvasID, imageID, totalRows, totalColumns);
+
+            game.initDrawing();
+
+        }
+
+        function SetRowsColumn() {
+                totalRows = 3;
+                totalColumns = 4;
+		}
+	
+	</script>
+</head>
+<body onload="InitGame();">
+<div class="container">
+<header style="height: 30px; background-color:#4CAF50; padding: 1em; ">
+  <h3 >Level 1</h3>
+</header>
+<nav style="float: left; padding: 1px; ">
+	<div align="left" style="height: 585px; width: 300px; border: black solid 1px; overflow: auto">
+		<div>
+            <img id="img1" width="300" height="200" ondblclick="LoadNewImage(this.id);" src="Image/cuu1.png"></img>
+        </hr>
+        </div>
+        <div>
+             <img id="img2" width="300" height="200" ondblclick="LoadNewImage(this.id);" src="Image/tho.png"></img>
+        </hr>
+
+        </div>
+        <div>
+            <img id="img3" width="300" height="200" ondblclick="LoadNewImage(this.id);" src="Image/canhcut.png"></img>
+        </hr>
+
+        </div>
+	</div>
+
+</nav>
+<article style="float: left; padding: 1em; " >
+	<div>
+    	<canvas id="canJigsaw" width="800" height="550" style="border: black solid 2px;">
+
+    	</canvas>
+    </div>
+    hello
+	<div>
+		
+	</div>
+
+</article>
+</div>
+</body>
+</html>
