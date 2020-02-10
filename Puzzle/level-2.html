@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script type="text/javascript" src="Js/puzzle.js"></script>
+    <script type="text/javascript">
+
+        var game = null;
+        var imageID = "img1";
+        var totalRows = 3;
+        var totalColumns = 3;
+
+
+        function InitGame() {
+            LoadNewImage(imageID);
+        }
+
+        function LoadNewImage(imgID) {
+            imageID = imgID;
+            
+            SetRowsColumn();
+            
+            LoadGame();
+        }
+        
+        function LoadGame() {
+            var canvasID = "canJigsaw";
+
+            game = new puzzle(canvasID, imageID, totalRows, totalColumns);
+
+            game.initDrawing();
+
+        }
+
+        function ShowPreview() {
+            if (game) {
+
+                game.showPreview();
+
+            }
+        }
+
+        function SetRowsColumn() {
+                totalRows = 4;
+                totalColumns = 5;
+
+            }
+
+    </script>
+</head>
+<body onload="InitGame();">
+<header style="height: 30px; background-color:#4CAF50; padding: 1em; ">
+  <h3 >Level 1</h3>
+</header>
+    <table>
+        <tr>
+            <td>
+                <div>
+                    <canvas id="canJigsaw" width="850" height="600" style="border: black solid 2px;background-color: #BDBDBD;"></canvas>
+                </div>
+            </td>
+            <td width="20px">
+                &nbsp;
+            </td>
+            <td style="vertical-align: top;">
+                <div align="right" style="height: 585px; width: 320px; border: black solid 1px; overflow: auto;">
+                    <div>
+                        <img id="img2_1" width="300" height="200" ondblclick="LoadNewImage(this.id);" src="Image/2-1.png"></img>
+                    </div>
+                    <hr>
+                    <div>
+                        <img id="img2_2" width="300" height="200" ondblclick="LoadNewImage(this.id);" src="Image/2-2.png"></img>
+                    </div>
+                    <hr>
+                    <div>
+                        <img id="img2_3" width="300" height="200" ondblclick="LoadNewImage(this.id);" src="Image/2-3.png"></img>
+                    </div>
+                    <hr>
+                     <div>
+                        <img id="img2_4" width="300" height="200" ondblclick="LoadNewImage(this.id);" src="Image/2-4.png"></img>
+                    </div>
+                    <hr>
+                     <div>
+                        <img id="img2_5" width="300" height="200" ondblclick="LoadNewImage(this.id);" src="Image/2-5.png"></img>
+                    </div>
+                </div>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>
