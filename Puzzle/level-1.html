@@ -2,60 +2,61 @@
 <html>
 <head>
     <script type="text/javascript" src="Js/puzzle.js"></script>
+    <script type="text/javascript" src="Js/time.js"></script>
     <script type="text/javascript">
 
-        var game = null;
-        var imageID = "img1";
-        var totalRows = 3;
-        var totalColumns = 3;
-
-
+        var game = null,
+            imageID = "img1",
+            mins = 4,
+            secs = mins * 60,
+            newSecs=secs;
+            
         function InitGame() {
             LoadNewImage(imageID);
+            
         }
 
         function LoadNewImage(imgID) {
+
             imageID = imgID;
             
             SetRowsColumn();
-            
             LoadGame();
+            countdown(imgID);
         }
         
         function LoadGame() {
             var canvasID = "canJigsaw";
-
+    
             game = new puzzle(canvasID, imageID, totalRows, totalColumns);
 
             game.initDrawing();
 
         }
-
-        function ShowPreview() {
-            if (game) {
-
-                game.showPreview();
-
-            }
-        }
-
         function SetRowsColumn() {
                 totalRows = 3;
                 totalColumns = 4;
 
-            }
-
+        }
+    
+            //countdown();
     </script>
 </head>
 <body onload="InitGame();">
 <header style="height: 30px; background-color:#4CAF50; padding: 1em; ">
   <h3 >Level 1</h3>
 </header>
+<div id="timer">
+    <label>Time:</label>
+    <input id="minutes" value="4" type="text" style="width: 14px; border: none; background-color:none; font-size: 16px; font-weight: bold;">:<input id="seconds" value="00" type="text" style="width: 26px; border: none; background-color:none; font-size: 16px; font-weight: bold; margin-right: 30px;">
+    <label>Points:</label>
+    <input id="points" type="text" name="" value="12" style="border: none; font-size: 16px; font-weight: bold;">
+</div>
     <table>
         <tr>
             <td>
                 <div>
-                    <canvas id="canJigsaw" width="850" height="600" style="border: black solid 2px;background-color: #BDBDBD;"></canvas>
+                    <canvas id="canJigsaw" width="850" height="575" style="border: black solid 2px;background-color: #BDBDBD;"></canvas>
                 </div>
             </td>
             <td width="20px">
@@ -64,7 +65,7 @@
             <td style="vertical-align: top;">
                 <div align="right" style="height: 585px; width: 320px; border: black solid 1px; overflow: auto;">
                     <div>
-                        <img id="img1_1" width="300" height="200" ondblclick="LoadNewImage(this.id);" src="Image/1-1.png"></img>
+                        <img id="img1_1" width="300" height="200" ondblclick="LoadNewImage(this.id);" src="Image/1-1.png" ></img>
                     </div>
                     <div>
                         <img id="img1_2" width="300" height="200" ondblclick="LoadNewImage(this.id);" src="Image/1-2.png"></img>

@@ -2,24 +2,27 @@
 <html>
 <head>
     <script type="text/javascript" src="Js/puzzle.js"></script>
+    <script type="text/javascript" src="Js/time.js"></script>
     <script type="text/javascript">
 
-        var game = null;
-        var imageID = "img1";
-        var totalRows = 3;
-        var totalColumns = 3;
-
-
+         var game = null,
+            imageID = "img1",
+            mins = 8,
+            secs = mins *60,
+            newSecs=secs;
+            
         function InitGame() {
             LoadNewImage(imageID);
+            
         }
 
         function LoadNewImage(imgID) {
+
             imageID = imgID;
             
             SetRowsColumn();
-            
             LoadGame();
+            countdown();
         }
         
         function LoadGame() {
@@ -29,14 +32,6 @@
 
             game.initDrawing();
 
-        }
-
-        function ShowPreview() {
-            if (game) {
-
-                game.showPreview();
-
-            }
         }
 
         function SetRowsColumn() {
@@ -55,7 +50,7 @@
         <tr>
             <td>
                 <div>
-                    <canvas id="canJigsaw" width="850" height="600" style="border: black solid 2px;background-color: #BDBDBD;"></canvas>
+                    <canvas id="canJigsaw" width="850" height="575" style="border: black solid 2px;background-color: #BDBDBD;"></canvas>
                 </div>
             </td>
             <td width="20px">
