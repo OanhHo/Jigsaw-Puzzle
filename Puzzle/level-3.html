@@ -5,13 +5,11 @@
     <script type="text/javascript" src="Js/puzzle.js"></script>
     <script type="text/javascript" src="Js/time.js"></script>
     <script type="text/javascript" src="Js/helper.js"></script>
-        <script type="text/javascript" src="Js/cooki.js"></script>
-
     <script type="text/javascript">
 
         var game = null,
             imageID = "img1",
-            mins = 4,
+            mins = 12,
             secs = 0,
             newSecs=mins*60+ secs; 
             
@@ -39,16 +37,15 @@
 
         }
         function SetRowsColumn() {
-                totalRows = 3;
-                totalColumns = 4;
+                totalRows = 5;
+                totalColumns = 6;
 
         }
-        
     </script>
 </head>
-<body onload="InitGame(); " onload="checkCookie();" >
+<body onload="InitGame();">
 <header >
-    <span id="title">My Jigsaw Puzzle Game</span> <span class="level-title">Level 1</span><br> 
+    <span id="title">My Jigsaw Puzzle Game</span> <span class="level-title">Level 3</span><br> 
     <span><button class="button" id="level1" onclick="Click1();" >Level 1</button></span> 
     <span><button class="button" id="level2" onclick="Click2();" >Level 2</button></span>
     <span><button class="button" id="level3" onclick="Click3();" >Level 3</button></span> 
@@ -95,7 +92,7 @@
     </table>
     <div><h3 style="color: green; margin-left: 25%; font-size: 25px; "> Listen to music while playing games. Let's go!</h3></div>
     <div>
-        <iframe width="1200" height="500" src="https://www.youtube.com/embed/rma93iCBkwA?autoplay=1" frameborder="1" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe width="1200" height="500" src="https://www.youtube.com/embed/hiRqIZcVkv4?autoplay=1" frameborder="1" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </div>
 </body>
 </html>

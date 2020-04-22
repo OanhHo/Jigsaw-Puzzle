@@ -1,0 +1,69 @@
+header{
+	height: 35px; 
+	background-color:#0b3109; 
+	padding: 1em;
+}
+#minutes{
+	width: 14px;
+	border: none;
+	background-color:none;
+	font-size: 16px;
+	font-weight: bold;
+	color: #e26013;
+}
+#seconds{
+	width: 26px; 
+	border: none; 
+	background-color:none; 
+	font-size: 16px; 
+	font-weight: bold; 
+	margin-right: 30px;
+	color: #e26013;
+
+}
+#points{
+	border: none; 
+	font-size: 16px; 
+	font-weight: bold;
+	color: #e26013;
+
+}
+#canJigsaw{
+	border: black solid 2px;
+	background-color: #93c4ca;
+}
+#title{
+	font-weight: bold;
+	font-size: 22px;
+	margin-left: 1%;
+	color: #116bb5;
+}
+.button{
+	border: 0px;
+	background-color: transparent;
+	font-size: 15px;
+	color: #de7536;
+}
+#timer{
+	font-weight: bold;
+}
+.level-title{
+	font-size: 22px;
+	margin-left: 23%;
+	color: #ffffff;
+	font-weight: bold;
+}
+.score{
+	font-size: 20px;
+	font-weight: bold;
+	color: #35c5b9;
+	margin-left: 50%;
+}
+#score-input{
+	border: none;
+	font-weight: bold;
+	font-size: 20px;
+	width: 30px;
+	color:#35c5b9;
+	background-color: transparent;
+}

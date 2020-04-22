@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <link rel="stylesheet" type="text/css" href="CSS/main.css">
     <script type="text/javascript" src="Js/puzzle.js"></script>
     <script type="text/javascript" src="Js/time.js"></script>
+    <script type="text/javascript" src="Js/helper.js"></script>
     <script type="text/javascript">
 
          var game = null,
@@ -44,20 +46,26 @@
     </script>
 </head>
 <body onload="InitGame();">
-<header style="height: 30px; background-color:#4CAF50; padding: 1em; ">
-  <h3 >Level 1</h3>
+<header >
+    <span id="title">My Jigsaw Puzzle Game</span> <span class="level-title">Level 2</span><br> 
+    <span><button class="button" id="level1" onclick="Click1();" >Level 1</button></span> 
+    <span><button class="button" id="level2" onclick="Click2();" >Level 2</button></span>
+    <span><button class="button" id="level3" onclick="Click3();" >Level 3</button></span> 
+    <span><button class="button" id="level4" onclick="Click4();" >Level 4</button></span> 
+    <span><button class="button" id="level4" onclick="Click5();" >Level 5</button></span>
+    <span class="score"><label>Scores: </label><input type="tex" name="score" value="8" id="score-input"></span>
 </header>
     <div id="timer">
         <label>Time:</label>
-        <input id="minutes" value="8" type="text" style="width: 14px; border: none; background-color:none; font-size: 16px; font-weight: bold;">:<input id="seconds" value="00" type="text" style="width: 26px; border: none; background-color:none; font-size: 16px; font-weight: bold; margin-right: 30px;">
+        <input id="minutes" value="8" type="text" >:<input id="seconds" value="00" type="text" >
         <label>Points:</label>
-        <input id="points" type="text" name="" value="24" style="border: none; font-size: 16px; font-weight: bold;">
+        <input id="points" type="text" name="" value="24" >
     </div>
     <table>
         <tr>
             <td>
                 <div>
-                    <canvas id="canJigsaw" width="850" height="575" style="border: black solid 2px;background-color: #BDBDBD;"></canvas>
+                    <canvas id="canJigsaw" width="850" height="575" ></canvas>
                 </div>
             </td>
             <td width="20px">
@@ -88,8 +96,9 @@
             </td>
         </tr>
     </table>
+    <div><h3 style="color: green; margin-left: 25%; font-size: 25px; "> Listen to music while playing games. Let's go!</h3></div>
     <div>
-        <iframe src="https://www.nhaccuatui.com/mh/background/bux1uKuzWM" width="1200" height="200" frameborder="1" allowfullscreen allow="autoplay"></iframe>
+        <iframe width="1200" height="500" src="https://www.youtube.com/embed/5Y0LhI4pkas?autoplay=1" frameborder="1" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </div>
 </body>
 </html>

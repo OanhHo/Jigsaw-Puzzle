@@ -92,8 +92,8 @@ function puzzle(canvasID, imageID, rows,columns) {
         blockList = new Array();
 
         var x1 = BLOCK_IMG_WIDTH + 20;//=620
-        var x2 = canvas.width - 50;//=750
-        var y2 = BLOCK_IMG_HEIGHT;//=450
+        var x2 = canvas.width - 100;//=750
+        var y2 = canvas.height-70;//=450
         for (var i = 0; i < total; i++) {//i=0
 
             var randomX = randomXtoY(x1, x2, 2);//=randomXtoY(620,750,2)=734
@@ -403,5 +403,7 @@ function puzzle(canvasID, imageID, rows,columns) {
 
         }
     };
+    
+    
 
 }
