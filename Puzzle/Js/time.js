@@ -1,5 +1,5 @@
-function countdown(imgID){
-    setTimeout('Decrement()',1000);  
+function countdown(min,sec){
+    setTimeout('Decrement()',1000);
 }
 function Decrement() {
     if (document.getElementById) {
@@ -12,8 +12,10 @@ function Decrement() {
         if (seconds < 59) {
             seconds.value = newSecs;
         } else {
+
             minutes.value = getminutes();
-            seconds.value = getseconds();
+
+            seconds.value = getseconds()<10 ? "0" + getseconds() : getseconds();
         }
         if (newSecs<=0) {
             alert("Game is timeout.");

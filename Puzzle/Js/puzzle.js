@@ -1,4 +1,3 @@
-﻿
 function imageBlock(no, x, y) {
     //doi tuong chua toa do cua cac block image
 
@@ -82,8 +81,6 @@ function puzzle(canvasID, imageID, rows,columns) {
         BLOCK_WIDTH = Math.round(BLOCK_IMG_WIDTH / TOTAL_COLUMNS);//=600:6
         BLOCK_HEIGHT = Math.round(BLOCK_IMG_HEIGHT / TOTAL_ROWS);//450:5
 
-
-        // Draw image
         SetImageBlock();//ve luoi
         DrawGame();
     }
@@ -110,7 +107,7 @@ function puzzle(canvasID, imageID, rows,columns) {
 
             var x = (i % TOTAL_COLUMNS) * BLOCK_WIDTH;//x = 200, i = 2
             //i%TOTAL_COLUMNS chia lay phan du
-            var y = Math.floor(i / TOTAL_COLUMNS) * BLOCK_HEIGHT;//=0
+            var y = Math.floor(i / TOTAL_COLUMNS) * BLOCK_HEIGHT +BLOCK_HEIGHT;//=0
             //Lay phan nguyen cua so thap phan
 
             var block = new imageBlock(i, x, y);
@@ -141,16 +138,16 @@ function puzzle(canvasID, imageID, rows,columns) {
         // draw verticle lines
         for (var i = 0; i <= TOTAL_COLUMNS; i++) {//i=6
             var x = BLOCK_WIDTH * i;//x=600
-            ctx.moveTo(x, 0);
-            ctx.lineTo(x, 450);
-            // bat dau ve tu toa do moveTo den toa do lineTo
+            ctx.moveTo(x, 0+BLOCK_HEIGHT);
+            ctx.lineTo(x, 450 +BLOCK_HEIGHT);
+            // bat dau ve duong doc tu toa do moveTo den toa do lineTo
         }
 
         // draw horizontal lines
         for (var i = 0; i <= TOTAL_ROWS; i++) {//i=6
             var y = BLOCK_HEIGHT * i;//y=450
-            ctx.moveTo(0, y);
-            ctx.lineTo(600, y);
+            ctx.moveTo(0, y+BLOCK_HEIGHT);
+            ctx.lineTo(600, y+BLOCK_HEIGHT);
         }
 
 
@@ -229,6 +226,7 @@ function puzzle(canvasID, imageID, rows,columns) {
         if (selectedBlock) {
             imageBlockList[selectedBlock.no].isSelected = true;
         }
+
 
     }
 
@@ -363,7 +361,47 @@ function puzzle(canvasID, imageID, rows,columns) {
 
         return true;
     }
+    var interval = null,
+        remove_width,
+        remove_height;
+    function OnFinished() {
+        var points=document.getElementById("points");
+
+        alert("You are finished picture with "+ points.value + " point");
+        remove_width = BLOCK_WIDTH;
+        remove_height = BLOCK_HEIGHT;
+        // Clear Board
+        interval = setInterval(function () { mySelf.ClearGame(); }, 100);
+    }
+
+    this.ClearGame = function () {
+        //   alert("f");
+        remove_width -= 30;
+        remove_height -= 20;
+
+        if (remove_width > 0 && remove_height > 0) {
+
+            clear(ctx);
+
+            for (var i = 0; i < imageBlockList.length; i++) {
+                var imgBlock = imageBlockList[i];
+
+                imgBlock.x += 10;
+                imgBlock.y += 10;
+
+                drawFinalImage(imgBlock.no, imgBlock.x, imgBlock.y, remove_width, remove_height);
+            }
+
+            // DrawGame();
+        } else {
+
+            clearInterval(interval);
+           
+            // Restart game
+            initializeNewGame(); 
+          //  alert("Congrats....");
+
+        }
+    };
 
 }
-
-

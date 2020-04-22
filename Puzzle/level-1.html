@@ -8,11 +8,12 @@
         var game = null,
             imageID = "img1",
             mins = 4,
-            secs = mins * 60,
-            newSecs=secs;
+            secs = 0,
+            newSecs=mins*60+ secs; 
             
         function InitGame() {
             LoadNewImage(imageID);
+
             
         }
 
@@ -22,12 +23,12 @@
             
             SetRowsColumn();
             LoadGame();
-            countdown(imgID);
+            countdown(mins,secs);
+            
         }
         
         function LoadGame() {
             var canvasID = "canJigsaw";
-    
             game = new puzzle(canvasID, imageID, totalRows, totalColumns);
 
             game.initDrawing();
@@ -38,8 +39,6 @@
                 totalColumns = 4;
 
         }
-    
-            //countdown();
     </script>
 </head>
 <body onload="InitGame();">
@@ -56,7 +55,7 @@
         <tr>
             <td>
                 <div>
-                    <canvas id="canJigsaw" width="850" height="575" style="border: black solid 2px;background-color: #BDBDBD;"></canvas>
+                    <canvas id="canJigsaw" width="850" height="600" style="border: black solid 2px;background-color: #BDBDBD;" onchange="s();"></canvas>
                 </div>
             </td>
             <td width="20px">
@@ -83,5 +82,8 @@
             </td>
         </tr>
     </table>
+    <div>
+        <iframe src="https://www.nhaccuatui.com/mh/background/LGYodRfNtMTj" width="1200" height="200" frameborder="1" allowfullscreen allow="autoplay"></iframe>
+    </div>
 </body>
 </html>

@@ -8,8 +8,8 @@
          var game = null,
             imageID = "img1",
             mins = 8,
-            secs = mins *60,
-            newSecs=secs;
+            secs = 0,
+            newSecs=mins*60+ secs; 
             
         function InitGame() {
             LoadNewImage(imageID);
@@ -22,7 +22,8 @@
             
             SetRowsColumn();
             LoadGame();
-            countdown();
+            countdown(mins,secs);
+    
         }
         
         function LoadGame() {
@@ -87,5 +88,8 @@
             </td>
         </tr>
     </table>
+    <div>
+        <iframe src="https://www.nhaccuatui.com/mh/background/bux1uKuzWM" width="1200" height="200" frameborder="1" allowfullscreen allow="autoplay"></iframe>
+    </div>
 </body>
 </html>
