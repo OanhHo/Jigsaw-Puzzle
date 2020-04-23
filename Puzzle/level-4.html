@@ -11,7 +11,7 @@
 
         var game = null,
             imageID = "img1",
-            mins = 4,
+            mins = 16,
             secs = 0,
             newSecs=mins*60+ secs; 
             
@@ -39,16 +39,16 @@
 
         }
         function SetRowsColumn() {
-                totalRows = 3;
-                totalColumns = 4;
+                totalRows = 6;
+                totalColumns = 7;
 
         }
         
     </script>
 </head>
-<body onload="tutorial(); " >
+<body onload="InitGame(); "  >
 <header >
-    <span id="title">My Jigsaw Puzzle Game</span> <span class="level-title">Level 1</span><br> 
+    <span id="title">My Jigsaw Puzzle Game</span> <span class="level-title">Level 4</span><br> 
     <span><button class="button" id="level1" onclick="Click1();" >Level 1</button></span> 
     <span><button class="button" id="level2" onclick="Click2();" >Level 2</button></span>
     <span><button class="button" id="level3" onclick="Click3();" >Level 3</button></span> 
@@ -58,7 +58,7 @@
 </header>
 <div id="timer">
     <label>Time:</label>
-    <input id="minutes" value="4" type="text" style="">:<input id="seconds" value="00" type="text" style="">
+    <input id="minutes" value="16" type="text" style="">:<input id="seconds" value="00" type="text" style="">
     <label>Points:</label>
     <input id="points" type="text" name="" value="12" style="">
 </div>
@@ -75,19 +75,19 @@
             <td style="vertical-align: top;">
                 <div align="right" style="height: 585px; width: 320px; border: black solid 1px; overflow: auto;">
                     <div>
-                        <img id="img1_1" width="300" height="200" ondblclick="LoadNewImage(this.id);" src="Image/1-1.png" ></img>
+                        <img id="img1_1" width="300" height="200" ondblclick="LoadNewImage(this.id);" src="Image/4-1.png" ></img>
                     </div>
                     <div>
-                        <img id="img1_2" width="300" height="200" ondblclick="LoadNewImage(this.id);" src="Image/1-2.png"></img>
+                        <img id="img1_2" width="300" height="200" ondblclick="LoadNewImage(this.id);" src="Image/4-2.png"></img>
                     </div>
                     <div>
-                        <img id="img1_3" width="300" height="200" ondblclick="LoadNewImage(this.id);" src="Image/1-3.png"></img>
+                        <img id="img1_3" width="300" height="200" ondblclick="LoadNewImage(this.id);" src="Image/4-3.png"></img>
                     </div>
                     <div>
-                        <img id="img1_4" width="300" height="200" ondblclick="LoadNewImage(this.id);" src="Image/1-4.png"></img>
+                        <img id="img1_4" width="300" height="200" ondblclick="LoadNewImage(this.id);" src="Image/4-4.png"></img>
                     </div>
                     <div>
-                        <img id="img1_5" width="300" height="200" ondblclick="LoadNewImage(this.id);" src="Image/1-5.png"></img>
+                        <img id="img1_5" width="300" height="200" ondblclick="LoadNewImage(this.id);" src="Image/4-5.png"></img>
                     </div>
                 </div>
             </td>
@@ -95,22 +95,7 @@
     </table>
     <div><h3 style="color: green; margin-left: 25%; font-size: 25px; "> Listen to music while playing games. Let's go!</h3></div>
     <div>
-        <iframe width="1200" height="500" src="https://www.youtube.com/embed/rma93iCBkwA?autoplay=1" frameborder="1" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe width="1200" height="500" src="https://www.youtube.com/embed/WAT-Gy6QsTY?autoplay=1" frameborder="1" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </div>
-    <div id="myModal" class="modal" style="display: none;">
-    <div class="modal-content">
-    <span class="close">&times;</span>
-    <h3 style="color: #1053a9; text-align: center; font-size: 20px;">Welcome To My Jigsaw Puzzle Game</h3>
-    <div>
-        <h4>Start game</h4>
-        <img src="Image/0.png" style="margin-left: 20%; width: 240px; height: 180px;">
-    </div>
-    <div>
-        <h4>Play game</h4>
-        <img src="Image/tutorial.png" class="image">
-    </div>
-    
-    </div>
-    </div> 
 </body>
 </html>

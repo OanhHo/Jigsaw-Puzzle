@@ -93,11 +93,11 @@ function puzzle(canvasID, imageID, rows,columns) {
 
         var x1 = BLOCK_IMG_WIDTH + 20;//=620
         var x2 = canvas.width - 100;//=750
-        var y2 = canvas.height-70;//=450
+        var y2 = BLOCK_IMG_HEIGHT-50;//=450
         for (var i = 0; i < total; i++) {//i=0
 
             var randomX = randomXtoY(x1, x2, 2);//=randomXtoY(620,750,2)=734
-            var randomY = randomXtoY(0, y2, 2);//=14
+            var randomY = randomYtoX(0, y2, 2);//=14
        
             var imgBlock = new imageBlock(i, randomX, randomY);
             //imgBlock = imageBlock {no: 0, x: 734, y: 14, isSelected: false}, i = 0, randomX = 734, randomY
@@ -279,6 +279,12 @@ function puzzle(canvasID, imageID, rows,columns) {
         c.clearRect(0, 0, canvas.width, canvas.height);
     }
 
+    function randomYtoX(minVal, maxVal, floatVal) {
+        var randVal = minVal + (Math.random() * (maxVal - minVal)) +70;
+        var val = typeof floatVal == 'undefined' ? Math.round(randVal) : randVal.toFixed(floatVal);
+
+        return Math.round(val);
+    }
     function randomXtoY(minVal, maxVal, floatVal) {
         var randVal = minVal + (Math.random() * (maxVal - minVal));
         var val = typeof floatVal == 'undefined' ? Math.round(randVal) : randVal.toFixed(floatVal);

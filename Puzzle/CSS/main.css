@@ -4,7 +4,7 @@ header{
 	padding: 1em;
 }
 #minutes{
-	width: 14px;
+	width: 20px;
 	border: none;
 	background-color:none;
 	font-size: 16px;
@@ -66,4 +66,50 @@ header{
 	width: 30px;
 	color:#35c5b9;
 	background-color: transparent;
+}
+.modal {
+  display: none; /* Hidden by default */
+  position: absolute; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 10px;
+  border-radius: 25px;
+  border: solid #ffffff;
+  width: 400px;
+  height: auto;
+  background-position: center center;
+  background-color: #ffffff;
+ 
+}
+
+/* The Close Button */
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+.image{
+	width: 240px;
+	margin-left: 20%;
 }
