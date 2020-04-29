@@ -199,6 +199,10 @@ function puzzle(canvasID, imageID, rows,columns) {
     }
 
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    /**
+     * on Mouse Cursor go out canvas event handler
+     * @param {MouseEvent} e
+     */
     function handleOnMouseOut(e) {
 
         // remove old selected
@@ -212,6 +216,10 @@ function puzzle(canvasID, imageID, rows,columns) {
 
     }
 
+    /**
+     * on Mouse Button Pressed event handler
+     * @param {MouseEvent} e 
+     */
     function handleOnMouseDown(e) {
 
         // remove old selected
@@ -221,7 +229,11 @@ function puzzle(canvasID, imageID, rows,columns) {
 
         }
 
-        selectedBlock = GetImageBlock(imageBlockList, e.pageX, e.pageY);
+        // Help understanding: compare log mouse position informations
+        console.log("mouse page(" + e.pageX + "," +  e.pageY  + ")" + "client(" + e.clientX + "," +  e.clientY  + ")" + "offcet(" + e.offsetX + "," +  e.offsetY  + ")");
+
+        selectedBlock = GetImageBlock(imageBlockList, e.offsetX, e.offsetY);
+        // selectedBlock = GetImageBlock(imageBlockList, e.pageX, e.pageY);
 
         if (selectedBlock) {
             imageBlockList[selectedBlock.no].isSelected = true;
@@ -230,14 +242,18 @@ function puzzle(canvasID, imageID, rows,columns) {
 
     }
 
-
+    /**
+     * on Mouse Button Released event handler
+     * @param {MouseEvent} e 
+     */
     function handleOnMouseUp(e) {
 
         if (selectedBlock) {
             var index = selectedBlock.no;
             //   alert(index);
 
-            var block = GetImageBlock(blockList, e.pageX, e.pageY);
+            var block = GetImageBlock(blockList, e.offsetX, e.offsetY);
+            // var block = GetImageBlock(blockList, e.pageX, e.pageY);
             if (block) {
 
                 var blockOldImage = GetImageBlockOnEqual(imageBlockList, block.x, block.y);
@@ -262,12 +278,18 @@ function puzzle(canvasID, imageID, rows,columns) {
         }
     }
 
+    /**
+     * on Mouse move on canvas event handler
+     * @param {MouseEvent} e 
+     */
     function handleOnMouseMove(e) {
 
         if (selectedBlock) {
 
-            selectedBlock.x = e.pageX  - 25;
-            selectedBlock.y = e.pageY  - 25;
+            // selectedBlock.x = e.pageX  - 25;
+            // selectedBlock.y = e.pageY  - 25;
+            selectedBlock.x = e.offsetX  - 25;
+            selectedBlock.y = e.offsetY  - 25;
 
             DrawGame();
 
