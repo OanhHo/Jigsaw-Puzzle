@@ -5,7 +5,7 @@
     <script type="text/javascript" src="Js/puzzle.js"></script>
     <script type="text/javascript" src="Js/time.js"></script>
     <script type="text/javascript" src="Js/helper.js"></script>
-        <script type="text/javascript" src="Js/cooki.js"></script>
+    <script type="text/javascript" src="Js/cooki.js"></script>
 
     <script type="text/javascript">
 
@@ -13,7 +13,8 @@
             imageID = "img1",
             mins = 4,
             secs = 0,
-            newSecs=mins*60+ secs; 
+            newSecs=mins*60+ secs;
+            console.log(user);            
             
         function InitGame() {
             LoadNewImage(imageID);
@@ -48,13 +49,15 @@
 </head>
 <body onload="tutorial(); " >
 <header >
+    <div>
     <span id="title">My Jigsaw Puzzle Game</span> <span class="level-title">Level 1</span><br> 
     <span><button class="button" id="level1" onclick="Click1();" >Level 1</button></span> 
     <span><button class="button" id="level2" onclick="Click2();" >Level 2</button></span>
     <span><button class="button" id="level3" onclick="Click3();" >Level 3</button></span> 
     <span><button class="button" id="level4" onclick="Click4();" >Level 4</button></span> 
     <span><button class="button" id="level4" onclick="Click5();" >Level 5</button></span>
-    <span class="score"><label>Scores: </label><input type="tex" name="score" value="8" id="score-input"></span>
+    <span class="score"><label>Scores: </label><input type="tex" name="score" value="0" id="score-input"></span>
+    </div>
 </header>
 <div id="timer">
     <label>Time:</label>

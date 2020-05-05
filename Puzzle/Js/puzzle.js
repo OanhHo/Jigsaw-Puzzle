@@ -393,9 +393,14 @@ function puzzle(canvasID, imageID, rows,columns) {
         remove_width,
         remove_height;
     function OnFinished() {
-        var points=document.getElementById("points");
+        var points=document.getElementById("points"),
+            score=document.getElementById("score-input"),
+            old_score=score.value;
 
         alert("You are finished picture with "+ points.value + " point");
+        
+        score.value= Number(old_score)+ Number(points.value);
+        checkCookie(score);
         remove_width = BLOCK_WIDTH;
         remove_height = BLOCK_HEIGHT;
         // Clear Board
@@ -431,6 +436,42 @@ function puzzle(canvasID, imageID, rows,columns) {
 
         }
     };
+    ////////////////////////////////////////
+    function setCookie(cname,cvalue,exdays) {
+  var d = new Date();
+  d.setTime(d.getTime() + (exdays*24*60*60*1000));
+  var expires = "expires=" + d.toGMTString();
+  document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+}
+
+function getCookie(cname) {
+  var name = cname + "=";
+  var decodedCookie = decodeURIComponent(document.cookie);
+  var ca = decodedCookie.split(';');
+  for(var i = 0; i < ca.length; i++) {
+    var c = ca[i];
+    while (c.charAt(0) == ' ') {
+      c = c.substring(1);
+    }
+    if (c.indexOf(name) == 0) {
+      return c.substring(name.length, c.length);
+    }
+  }
+  return "";
+}
+
+function checkCookie(score) {
+  var user=getCookie("username");
+  if (user != "") {
+    document.getElementById("score-input").value=user;
+
+  } else {
+     user = document.getElementById("score-input").value
+     if (user != "" && user != null) {
+       setCookie("username", user, 30);
+     }
+  }
+}
     
     
 
